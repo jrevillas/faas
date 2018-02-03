@@ -14,9 +14,32 @@
       <md-tabs md-border-bottom md-dynamic-height>
 
         <md-tab label="general">
-          <md-content class="md-padding">
-            <h1 class="md-display-2">General</h1>
+          <md-content class="md-padding" style="min-width: 750px">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div layout="row" layout-align="space-around">
+              <md-input-container class="md-block md-icon-float" flex="45">
+                <label>Function name</label>
+                <md-icon md-svg-src="img/icons/func-name.svg"></md-icon>
+                <input ng-model="function.name" placeholder="hello-world" required type="text">
+              </md-input-container>
+              <md-input-container class="md-block md-icon-float" flex="45">
+                <label>Docker image</label>
+                <md-icon md-svg-src="img/icons/func-image.svg"></md-icon>
+                <input ng-model="function.image" placeholder="alexellis/hello-world" required type="text">
+              </md-input-container>
+            </div>
+            <div layout="row" layout-align="space-around">
+              <md-input-container class="md-block md-icon-float" flex="45">
+                <label>Network (swarm)</label>
+                <md-icon md-svg-src="img/icons/func-network.svg"></md-icon>
+                <input ng-model="function.network" placeholder="func_functions" required type="text">
+              </md-input-container>
+              <md-input-container class="md-block md-icon-float" flex="45">
+                <label>Function process</label>
+                <md-icon md-svg-src="img/icons/func-process.svg"></md-icon>
+                <input ng-model="function.process" placeholder="python ./handler.py" type="text">
+              </md-input-container>
+            </div>
           </md-content>
         </md-tab>
 
