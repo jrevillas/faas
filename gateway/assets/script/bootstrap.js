@@ -59,7 +59,7 @@ app.controller("home", ['$scope', '$log', '$http', '$location', '$timeout', '$md
                 headers: { "Content-Type": requestContentType },
                 responseType: $scope.invocation.contentType == "binary" ? "arraybuffer" : $scope.invocation.contentType
             };
-            
+
             $scope.invocationInProgress = true;
             $scope.invocationResponse = "";
             $scope.invocationStatus = null;
@@ -77,7 +77,7 @@ app.controller("home", ['$scope', '$log', '$http', '$location', '$timeout', '$md
 
                     linkElement.setAttribute('href', url);
                     linkElement.setAttribute("download", filename);
-         
+
                     var clickEvent = new MouseEvent("click", {
                         "view": window,
                         "bubbles": true,
@@ -107,7 +107,7 @@ app.controller("home", ['$scope', '$log', '$http', '$location', '$timeout', '$md
 
                         var caught = tryDownload(data, filename);
                         if(caught) {
-                            console.log(caught);                         
+                            console.log(caught);
                             $scope.invocationResponse = caught
                         } else {
                             $scope.invocationResponse = data.byteLength + " byte(s) received";
@@ -186,7 +186,7 @@ app.controller("home", ['$scope', '$log', '$http', '$location', '$timeout', '$md
             $mdDialog.show({
                 parent: parentEl,
                 targetEvent: $event,
-                templateUrl: "templates/newfunction.html",
+                templateUrl: "templates/deployment-wizard.html",
                 locals: {
                     item: $scope.functionTemplate
                 },
@@ -212,7 +212,7 @@ app.controller("home", ['$scope', '$log', '$http', '$location', '$timeout', '$md
 
                 $scope.selectedFunc = func;
             }
-            
+
             $scope.onTabSelect = function(idx) {
                 newFuncTabIdx = idx;
             }
@@ -298,4 +298,3 @@ function uuidv4() {
       (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
     )
   }
-  
