@@ -1,5 +1,5 @@
 <md-dialog aria-label="Deployment wizard">
-  <form>
+  <form style="margin-bottom: 0">
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>Deployment wizard</h2>
@@ -11,7 +11,37 @@
     </md-toolbar>
 
     <md-dialog-content style="max-height: 810px;max-width: 800px">
+      <md-tabs md-border-bottom md-dynamic-height>
+
+        <md-tab label="general">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">General</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </md-content>
+        </md-tab>
+
+        <md-tab label="environment">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Environment</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </md-content>
+        </md-tab>
+
+      </md-tabs>
     </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-disabled="true">
+        Function Store
+      </md-button>
+      <span flex></span>
+      <md-button>
+        Close
+      </md-button>
+      <md-button class="md-primary">
+        Deploy
+      </md-button>
+    </md-dialog-actions>
 
   </form>
 </md-dialog>
