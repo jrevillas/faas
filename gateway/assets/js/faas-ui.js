@@ -2,7 +2,7 @@ angular
   .module('faasUI', ['ngMaterial'])
   .controller('faasCtrl', function($mdSidenav, $scope) {
     $scope.avatar = function(func) {
-      return 'https://www.gravatar.com/avatar/' + func.name + '?d=identicon&f=y';
+      return 'https://www.gravatar.com/avatar/' + md5(func.name) + '?d=identicon&f=y';
     };
     $scope.functions = [
       {image: 'jrevillas/faasfriday', invocations: '1.337', name: 'faasfriday'},
