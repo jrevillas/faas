@@ -6,6 +6,29 @@
     <link rel="stylesheet" href="css/angular-material.min.css">
   </head>
   <body ng-app="faasUI" ng-cloak>
+    <div layout="column" ng-cloak ng-controller="faasCtrl" style="height: 100%">
+      <section flex layout="row">
+        <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-is-locked-open="$mdMedia('gt-md')">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">
+              OpenFaaS UI
+            </h1>
+          </md-toolbar>
+          <md-content>
+            <md-list flex>
+              <md-list-item class="md-3-line" ng-click="null" ng-repeat="func in functions">
+                <img alt="{{ func.name }}" class="md-avatar" ng-src="{{ avatar(func) }}">
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{ func.name }}</h3>
+                  <h4>{{ func.image }}</h4>
+                  <p>{{ func.invocations }} invocations</p>
+                </div>
+              </md-list-item>
+            </md-list>
+          </md-content>
+        </md-sidenav>
+      </section>
+    </div>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-aria.min.js"></script>
