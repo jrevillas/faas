@@ -12,5 +12,12 @@ angular
       {image: 'jrevillas/stripe', invocations: '155', name: 'stripe (test)'},
       {image: 'jrevillas/pkmn-serverless', invocations: '1.575', name: 'pokedex'}
     ];
+    $scope.isSelectedFunc = function(func) {
+      return $scope.selectedFunc === func.name;
+    };
+    $scope.selectedFunc = undefined;
+    $scope.selectFunc = function(func) {
+      $scope.selectedFunc = func.name;
+    };
     console.log($scope.functions);
   });

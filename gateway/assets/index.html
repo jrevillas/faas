@@ -17,7 +17,10 @@
           </md-toolbar>
           <md-content>
             <md-list flex>
-              <md-list-item class="md-3-line" ng-click="null" ng-repeat="func in functions">
+              <md-list-item class="md-3-line"
+                            ng-class="isSelectedFunc(func) ? 'selected' : false"
+                            ng-click="selectFunc(func)"
+                            ng-repeat="func in functions">
                 <img alt="{{ func.name }}" class="md-avatar" ng-src="{{ avatar(func) }}">
                 <div class="md-list-item-text" layout="column">
                   <h3>{{ func.name }}</h3>
