@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/angular-material.min.css">
     <link rel="stylesheet" href="css/faas-ui.css">
+    <title>OpenFaaS UI</title>
   </head>
   <body ng-app="faasUI" ng-cloak>
     <div layout="column" ng-cloak ng-controller="faasCtrl" style="height: 100%">
@@ -31,7 +32,10 @@
             </md-list>
           </md-content>
         </md-sidenav>
-        <div class="blankslate" layout="column" layout-align="center center" ng-if="true">
+        <div class="blankslate"
+             layout="column"
+             layout-align="center center"
+             ng-if="selectedFunc === undefined">
           <p ng-if="true">
             You have no functions in OpenFaaS.<br>
             Start by deploying a new function.
