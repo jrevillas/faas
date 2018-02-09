@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/angular-material.min.css">
+    <link rel="stylesheet" href="css/faas-ui.css">
   </head>
   <body ng-app="faasUI" ng-cloak>
     <div layout="column" ng-cloak ng-controller="faasCtrl" style="height: 100%">
@@ -27,6 +28,16 @@
             </md-list>
           </md-content>
         </md-sidenav>
+        <div class="blankslate" layout="column" layout-align="center center" ng-if="true">
+          <p ng-if="true">
+            You have no functions in OpenFaaS.<br>
+            Start by deploying a new function.
+          </p>
+          <p ng-if="false"></p>
+          <md-button class="md-primary md-raised" ng-click="null">Deploy new function</md-button>
+          <p>Or use <strong>faas-cli</strong> to build and deploy functions:</p>
+          <pre>$ curl -sSL https://cli.openfaas.com | sudo sh</pre>
+        </div>
       </section>
     </div>
     <script src="js/angular.min.js"></script>

@@ -6,7 +6,11 @@ angular
     };
     $scope.functions = [
       {image: 'jrevillas/faasfriday', invocations: '1.337', name: 'faasfriday'},
-      {image: 'jrevillas/applepay', invocations: '125', name: 'applepay'}
+      {image: 'jrevillas/applepay', invocations: '125', name: 'applepay'},
+      {image: 'alexellis/inception', invocations: '5.250', name: 'inception'},
+      {image: 'jrevillas/stripe', invocations: '10', name: 'stripe (prod)'},
+      {image: 'jrevillas/stripe', invocations: '155', name: 'stripe (test)'},
+      {image: 'jrevillas/pkmn-serverless', invocations: '1.575', name: 'pokedex'}
     ];
     console.log($scope.functions);
   });
